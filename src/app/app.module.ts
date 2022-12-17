@@ -11,7 +11,7 @@ import { ListconseillersComponent } from './listconseillers/listconseillers.comp
 import { ModelsComponent } from './models/models.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { UpdateclientComponent } from './updateclient/updateclient.component';
-
+import {MatToolbarModule} from '@angular/material/toolbar';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +26,8 @@ import { UpdateclientComponent } from './updateclient/updateclient.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MatToolbarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
