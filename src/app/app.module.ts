@@ -1,33 +1,44 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { FormsModule } from "@angular/forms";
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AccueilComponent } from './accueil/accueil.component';
-import { CreateclientComponent } from './createclient/createclient.component';
+
 import { ListclientsComponent } from './listclients/listclients.component';
 import { ListcomptesComponent } from './listcomptes/listcomptes.component';
 import { ListconseillersComponent } from './listconseillers/listconseillers.component';
-import { ModelsComponent } from './models/models.component';
+import { CreateclientComponent } from "./createclient/createclient.component";
+
+// import { Client } from './models/client';
+// import {  Adresse } from "./models/adresse";
 import { NavbarComponent } from './navbar/navbar.component';
 import { UpdateclientComponent } from './updateclient/updateclient.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
+
+
 @NgModule({
   declarations: [
     AppComponent,
     AccueilComponent,
-    CreateclientComponent,
     ListclientsComponent,
     ListcomptesComponent,
     ListconseillersComponent,
-    ModelsComponent,
+    
+
+    // Client,
+    // Adresse,
     NavbarComponent,
-    UpdateclientComponent
+    UpdateclientComponent,
+    CreateclientComponent,
+   
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    MatToolbarModule
+    MatToolbarModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
