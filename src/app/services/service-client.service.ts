@@ -11,60 +11,87 @@ export class ServiceClientService {
   
   endpoint = 'http://localhost:8090';
 
-  // constructor(private httpt: HttpClient) { }
-
-  // getAll(){
-  //   return this.httpt.get(environment.serverUrl +"clients")
-  // }
-  // create(client : Client){
-  //   return this.httpt.post<Client>(environment.serverUrl + "clients" , client)
-  // }
-  // update(client : Client){
-  //   //let headers= new Headers()
-  //  /*  headers.append('Access-Control-Allow-Origin' , '*');
-  //   headers: new HttpHeaders({
-  //     'Content-Type':  'image/png',
-  //     'Access-Control-Allow-Origin': '*'
-  // }) */
-  //   return this.httpt.put<Client>(environment.serverUrl + "clients/" + client.id,client)
-  // }
-  // delete(id : number){
-  //   return this.httpt.delete<Client>(environment.serverUrl + "clients/" + id)
-  // }
-  // getCompteById(id : number){
-  //   return this.httpt.get(environment.serverUrl + "clientsComptes/" + id)
-  // }
-  // getById(id : number){
-  //   return this.httpt.get<Client>(environment.serverUrl + "clients/" + id)
-  // }
-  // chercherClient(mc:string=""){
-  //   return this.httpt.get(environment.serverUrl +"chercherClients?mc="+ mc)
-  // }
 
   constructor(private httpClient:HttpClient) { }
+  httpOptions = {
+    headers: new HttpHeaders({
+         'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin' : '*'
+    })
+}
 
-  getAll(){
-    return this.httpClient.get(environment.serverUrl +"clients")
-  }
-  create(client : Client){
-    return this.httpClient.post<Client>(environment.serverUrl + "clients" , client)
-  }
-  update(client : Client){
+  // getAll(){
+  //   return this.httpClient.get(environment.serverUrl +"clients")
+  // }
+
+  getAll(): Observable<Client[]> {
+    return this.httpClient.get<Client[]>(this.endpoint + '/clients', this.httpOptions)
+        .pipe(
+            catchError(this.handleError)
+        )
+}
+
+
+  // create(client : Client){
+  //   return this.httpClient.post<Client>(environment.serverUrl + "clients" , client)
+  // }
+  // update(client : Client){
   
-    return this.httpClient.put<Client>(environment.serverUrl + "clients/" + client.id,client)
-  }
-  delete(id : number){
-    return this.httpClient.delete<Client>(environment.serverUrl + "clients/" + id)
-  }
+  //   return this.httpClient.put<Client>(environment.serverUrl + "clients/" + client.id,client)
+  // }
+  update(id:any, client:Client): Observable<Client> {
+    return this.httpClient.put<Client>(this.endpoint + '/clients', JSON.stringify(client), this.httpOptions)
+        .pipe(
+            catchError(this.handleError)
+        )
+}
+  // delete(id : number){
+  //   return this.httpClient.delete<Client>(environment.serverUrl + "clients/" + id)
+  // }
+  delete(id:any) {
+    return this.httpClient.delete<Client>(this.endpoint + '/clients/' + id, this.httpOptions)
+        .pipe(
+            catchError(this.handleError)
+        )
+}
+
+
   getCompteById(id : number){
     return this.httpClient.get(environment.serverUrl + "clientsComptes/" + id)
   }
-  getById(id : number){
-    return this.httpClient.get<Client>(environment.serverUrl + "clients/" + id)
-  }
+  // getById(id : number){
+  //   return this.httpClient.get<Client>(environment.serverUrl + "clients/" + id)
+  // }
+
+  getById(id:any): Observable<Client> {
+    return this.httpClient.get<Client>(this.endpoint + '/clients/' + id)
+        .pipe(
+            catchError(this.handleError)
+        )
+}
+
   chercherClient(mc:string=""){
     return this.httpClient.get(environment.serverUrl +"chercherClients?mc="+ mc)
   }
+
+
+  create(client:Client): Observable<Client> {
+    return this.httpClient.post<Client>(this.endpoint + '/clients', JSON.stringify(client), this.httpOptions)
+        .pipe(
+            catchError(this.handleError)
+        )
+}
+
+handleError(error:any) {
+  let errorMessage = '';
+  if (error.error instanceof ErrorEvent) {
+      errorMessage = error.error.message;
+  } else {
+      errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
+  }
+  window.alert(errorMessage);
+  return throwError(() => new Error(errorMessage));
+}
 
 
  }
