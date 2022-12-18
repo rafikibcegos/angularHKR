@@ -19,12 +19,12 @@ newClient= new Client;
 
   ngOnInit() {
   }
-  onSubmit(userForm: NgForm) {
-    this.newClient = userForm.value
-    console.log(this.newClient)
-    this.serviceClient.create(this.newClient).subscribe((data: Client) =>{ 
-      this.router.navigate(['/listClients'])
-    })}
+  // onSubmit(userForm: NgForm) {
+  //   this.newClient = userForm.value
+  //   console.log(this.newClient)
+  //   this.serviceClient.create(this.newClient).subscribe((data: Client) =>{ 
+  //     this.router.navigate(['/listClients'])
+  //   })}
 
 
 addClient() {

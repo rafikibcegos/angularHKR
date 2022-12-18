@@ -26,8 +26,8 @@ const routes: Routes = [
   {path:"modifierClient/:id", component : UpdateclientComponent},
   {path:"listConseillers", component : ListconseillersComponent},
   {path:"listComptes/:id", component : ListcomptesComponent},
-  {path:"createclient", component : CreateclientComponent}
-
+  {path:"createclient", component : CreateclientComponent},
+  {path:"listcomptes", component : ListcomptesComponent}
 
 
 ];

@@ -27,11 +27,12 @@
       <td>{{c.nom}}</td>
       <td>{{c.prenom}}</td>
       <td>{{c.email}}</td>
-      <td>{{c.adresse}}</td>
+      <td cellspacing="20">{{c.adresse.numero +' ' + c.adresse.rue + ' ' +c.adresse.ville}}</td>
+     
       <td>
         <button class="btn btn-danger btn-sm btn-block" (click)="deleteClient(c.id)">Supprimer</button>
-        <button class="btn btn-warning btn-sm btn-block" [routerLink]="['modifierClient/:id' ,c.id]">Modifier</button>
-        <button class="btn btn-warning btn-sm btn-block" [routerLink]="['listComptes/:id' ,c.id]">Comptes</button>
+        <button class="btn btn-warning btn-sm btn-block" routerLink = "/modifierClient/{{c.id}}">Modifier</button>
+        <button class="btn btn-warning btn-sm btn-block" routerLink = "listComptes/{{c.id}}">Comptes</button>
       </td>
     </tr>
   </tbody>

@@ -1,6 +1,7 @@
-<div class="container my-5">
+<!-- <div class="container my-5"> -->
 
-    <form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)">
+    <!-- <form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)"> -->
+      <!-- <div class="form-group">
       <div class="form-row">
         <div class="form-group col-md-6">
           <label for="inputEmail4">Nom</label>
@@ -18,11 +19,51 @@
       <div class="form-group mb-5">
         <label for="inputAddress2">Adresse</label>
         <input type="text" ngModel name="adresse" class="form-control" id="inputAddress2" placeholder="Adresse...">
-      </div>
+      </div> -->
   
 <!--   
       <button type="submit" class="mt-5 btn btn-primary">Créer</button> -->
-      <button class="btn btn-success btn-lg btn-block" (click)="addClient()">Update Client</button>
+      <!-- <button class="btn btn-success btn-lg btn-block" (click)="addClient()">Update Client</button> -->
 
-    </form>
-  </div>
+    <!-- </form> -->
+  <!-- </div>
+  </div> -->
+
+
+
+  <div class="container custom-container">
+    <div class="col-md-12">
+        <form #mainForm="ngForm">
+            <h3 class="mb-3 text-center">Create Client</h3>
+
+            <div class="form-group">
+                <input type="text" [(ngModel)]="newClient.nom" name="nom"  class="form-control" placeholder="Nom">
+
+
+
+                <input type="text" [(ngModel)]="newClient.prenom" name="prenom"  class="form-control" placeholder="Prenom">
+
+
+
+                <!-- <input type="text" [(ngModel)]="newClient.login" name="login"  class="form-control" placeholder="Login"> -->
+
+  
+                    <input type="text" [(ngModel)]="newClient.adresse.numero" name="numero"  class="form-control"
+                        placeholder="numero">
+
+
+                    <input type="text" [(ngModel)]="newClient.adresse.rue" name="rue"  class="form-control" placeholder="rue">
+
+
+                    <input type="text" [(ngModel)]="newClient.adresse.ville" name="ville"  class="form-control"
+                        placeholder="ville">
+
+  
+                        <input type="text" [(ngModel)]="newClient.email" name="email"  class="form-control" placeholder="email">
+
+
+                <button class="btn btn-success btn-lg btn-block" (click)="addClient()">Update Client</button>
+            </div>
+        </form>
+    </div>
+</div>
