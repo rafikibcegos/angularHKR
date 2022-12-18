@@ -14,7 +14,7 @@ export class SeviceCompteService {
   getCompteById(id:number){
    return this.httpClient.get<Compte>(environment.serverUrl+"comptes/"+id)
   }
-  virement(compte1,compte2,montant){
-    return this.httpClient.get(environment.serverUrl+"virements/virement/"+compte1+"/"+compte2+"/"+montant)
-  }
+  // virement(compte1,compte2,montant){
+  //   return this.httpClient.get(environment.serverUrl+"virements/virement/"+compte1+"/"+compte2+"/"+montant)
+  // }
 }
