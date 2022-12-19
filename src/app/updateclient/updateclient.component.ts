@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Adresse } from '../models/adresse';
+import { Client } from '../models/client';
 import { ServiceClientService } from '../services/service-client.service';
 
 @Component({
@@ -10,44 +12,27 @@ import { ServiceClientService } from '../services/service-client.service';
   
 })
 export class UpdateclientComponent implements OnInit {
-
-//   
-userForm: FormGroup;
-
-  constructor(private fb: FormBuilder, private activeRoute: ActivatedRoute, private serviceClient:ServiceClientService, private router: Router) { }
   id = this.activeRoute.snapshot.params['id'];
   clientDetails: any = {};
-  ngOnInit() {
-    this.userForm = this.fb.group({
-      id: [''],
-      nom: [''],
-      prenom: [''],
-      email: [''],
-      adresse: [''],
-      /* listeCompte:{
-        numeroCompte:[''],
-        solde:[''],
-        decouvert:['']
-      } */
-    });
-    this.activeRoute.params.subscribe( (p) => {
-      this.serviceClient.getById(p.id).subscribe( client => {
-      this.userForm.setValue(client)
-      console.log(this.userForm)
-      })
-    })
-  }
-  // onSubmit(){
-    // this.serviceClient.update(this.userForm.value).subscribe(() =>{
-    //   this.router.navigate(['/listClients']);
-    // });
 
-  //   if ( window.confirm('Are you sure, you want to update?')) {
-  //     this.serviceClient.update(this.id, this.userForm.value).subscribe(data => {
-  //       this.router.navigate(['/listclients'])
-  //     })
-  //   }
-  // }
+  constructor(private fb: FormBuilder, private activeRoute: ActivatedRoute, private serviceClient:ServiceClientService, private router: Router) { 
+
+    this.clientDetails = new Client();
+    this.clientDetails.adresse = new Adresse();
+
+
+  }
+ 
+  ngOnInit() {
+  
+
+      this.serviceClient.getById(this.id).subscribe((data: {}) => {
+        this.clientDetails = data;
+    });
+
+   
+  }
+
 
   update() {
     if ( window.confirm('Are you sure, you want to update?')) {
