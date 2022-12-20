@@ -1,6 +1,7 @@
 export class Compte {
+    id:number;
     numeroCompte:number;
     solde:number;
-    decouvert:number;
-    listTransaction:any[]
+    dateOuverture:Date;
+   
 }

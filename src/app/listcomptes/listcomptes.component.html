@@ -1,4 +1,4 @@
-<div class="input-group ">
+<!-- <div class="input-group ">
     <div class="input-group-prepend">
       
     </div>
@@ -65,4 +65,76 @@
          
          
        </table>
-       </div>
+       </div> -->
+
+
+
+
+
+
+
+
+       <!-- <div class="my-3 mx-auto">
+        <h3>Liste des comptes:</h3>
+      </div>
+      <div class="input-group">
+        
+    
+    <table class="table table-bordered">
+    
+      <thead class="bg-info text-center">
+        <tr>
+          
+          <th scope="col">Id</th>
+          <th scope="col">Numero de Compte</th>
+          <th scope="col">Solde</th>
+          <th scope="col">Date d'Ouverture</th>
+         
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let c of listComptes">
+          <th scope="row">{{c.id}}</th> 
+          <td>{{c.numeroCompte}}</td>
+          <td>{{c.solde}}</td>
+          <td>{{c.dateOuverture}}</td> -->
+          <!-- <td cellspacing="20">{{c.adresse.numero +' ' + c.adresse.rue + ' ' +c.adresse.ville}}</td>
+         
+          <td>
+            <button class="btn btn-danger btn-sm btn-block" (click)="deleteClient(c.id)">Supprimer</button>
+            <button class="btn btn-warning btn-sm btn-block" routerLink = "/modifierClient/{{c.id}}">Modifier</button>
+            <button class="btn btn-warning btn-sm btn-block" routerLink = "listComptes/{{c.id}}">Comptes</button>
+          </td> -->
+        <!-- </tr>
+      </tbody>
+    </table> -->
+
+
+
+    <div class="input-group ">
+     </div>
+     <h3>Liste des comptes</h3>
+     <div class="btn-group btn-group-toggle" data-toggle="buttons">
+       
+      </div>
+    <table class="table table-bordered">
+            
+            <thead class="bg-info text-center" >
+              <tr>
+                  <th scope="col">Id</th>
+                <th scope="col">numero de Compte</th>
+                <th scope="col">solde</th>
+                <th scope="col">date d'Ouverture</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let c of listComptes">
+                <td>{{c.id}}</td>
+                <td>{{c.numeroCompte}}</td>
+                <td>{{c.solde}}</td>
+                <td>{{c.dateOuverture}}</td>
+                
+               
+              </tr>
+            </tbody>
+          </table>

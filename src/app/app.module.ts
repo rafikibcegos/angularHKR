@@ -23,7 +23,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
     AppComponent,
     AccueilComponent,
     ListclientsComponent,
-    // ListcomptesComponent,
+     ListcomptesComponent,
     ListconseillersComponent,
     
 
