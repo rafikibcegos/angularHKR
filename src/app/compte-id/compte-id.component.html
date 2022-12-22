@@ -1,0 +1,59 @@
+<div class="input-group ">
+    <div class="input-group-prepend">
+    </div>
+</div>
+
+   <h2 style="text-align: center; color:rgb(204, 0, 255);;">Details du compte client N°:  {{clientDetails.id}}  </h2><br>
+
+
+
+    <table class="table table-bordered">            
+        <thead class="bg-info text-center" >
+          <tr>
+              <th scope="col">Nom</th>
+            <th scope="col">Prenom</th>
+            <th scope="col">telephone</th>
+            <th scope="col">Adresse</th>
+          </tr>
+        </thead>
+        <tbody>     
+            <tr>              
+            <td>{{clientDetails.nom}}</td>
+            <td>{{clientDetails.prenom}}</td>
+            <td>{{clientDetails.telephone}}</td>
+            <td>{{clientDetails.adresse.numero}}   
+                {{clientDetails.adresse.rue}}   
+                 {{clientDetails.adresse.ville}}
+                </td>                    
+          </tr>
+        </tbody>
+      </table>
+
+   <table class="table table-bordered">            
+    <thead class="bg-info text-center" >
+      <tr>
+          
+        <th scope="col">numero de Compte</th>
+        <th scope="col">solde</th>
+        <th scope="col">date d'Ouverture</th>
+      </tr>
+    </thead>
+    <tbody>     
+        <tr>              
+       
+        <td>{{clientDetails.compte.numeroCompte}}</td>
+        <td>{{clientDetails.compte.solde}}  Euros</td>
+        <td>{{clientDetails.compte.dateOuverture}}</td>                    
+      </tr>
+    </tbody>
+  </table>
+  
+
+
+
+
+
+
+
+
+  
