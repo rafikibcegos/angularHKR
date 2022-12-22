@@ -1,68 +1,57 @@
-<!-- <div class="container my-5"> -->
-
-    <!-- <form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)"> -->
-      <!-- <div class="form-group">
-      <div class="form-row">
-        <div class="form-group col-md-6">
-          <label for="inputEmail4">Nom</label>
-          <input type="text" ngModel name="nom" class="form-control" id="inputEmail4" placeholder="Nom....">
-        </div>
-        <div class="form-group col-md-6">
-          <label for="inputPassword4">Prenom</label>
-          <input type="text" ngModel name="prenom" class="form-control" id="inputPassword4" placeholder="Prenom....">
-        </div>
-      </div>
-      <div class="form-group">
-        <label for="inputAddress">Email</label>
-        <input type="email" ngModel name="email" class="form-control" id="inputAddress" placeholder="email@.....">
-      </div>
-      <div class="form-group mb-5">
-        <label for="inputAddress2">Adresse</label>
-        <input type="text" ngModel name="adresse" class="form-control" id="inputAddress2" placeholder="Adresse...">
-      </div> -->
-  
-<!--   
-      <button type="submit" class="mt-5 btn btn-primary">Créer</button> -->
-      <!-- <button class="btn btn-success btn-lg btn-block" (click)="addClient()">Update Client</button> -->
-
-    <!-- </form> -->
-  <!-- </div>
-  </div> -->
-
-
-
   <div class="container custom-container">
     <div class="col-md-12">
         <form #mainForm="ngForm">
-            <h3 class="mb-3 text-center">Create Client</h3>
+            <h2 class="mb-3 text-center">Creer Un Client</h2>
 
             <div class="form-group">
-                <input type="text" [(ngModel)]="newClient.nom" name="nom"  class="form-control" placeholder="Nom">
+               
+             <label for="uname">Nom: </label>
+                <input id="uname" name ="name" [(ngModel)]="newClient.nom" name="nom"  class="form-control" placeholder="Nom" required minlength="2" maxlength="12">
+                <span class="validity"></span>
+              
 
+               
 
+                <label for="uname">Prenom: </label>
+                <input type="text" [(ngModel)]="newClient.prenom" name="prenom"  class="form-control" placeholder="Prenom" required minlength="2" maxlength="12">
+                <span class="validity"></span>
 
-                <input type="text" [(ngModel)]="newClient.prenom" name="prenom"  class="form-control" placeholder="Prenom">
+        
 
+          
 
+                <label for="uname">numero: </label>
 
-                <!-- <input type="text" [(ngModel)]="newClient.login" name="login"  class="form-control" placeholder="Login"> -->
-
-  
                     <input type="text" [(ngModel)]="newClient.adresse.numero" name="numero"  class="form-control"
-                        placeholder="numero">
+                        placeholder="numero de la rue" required minlength="2" maxlength="12">
 
+                        <span class="validity"></span>
 
-                    <input type="text" [(ngModel)]="newClient.adresse.rue" name="rue"  class="form-control" placeholder="rue">
+                
+                 
 
+                    <label for="uname">Rue: </label>
+
+                    <input type="text" [(ngModel)]="newClient.adresse.rue" name="rue"  class="form-control" placeholder="rue"required minlength="2" maxlength="12">
+                    <span class="validity"></span>
+
+             
+
+                        <label for="uname">Ville: </label>
 
                     <input type="text" [(ngModel)]="newClient.adresse.ville" name="ville"  class="form-control"
-                        placeholder="ville">
+                        placeholder="ville"required minlength="2" maxlength="12">
+                        <span class="validity"></span>
 
-  
-                        <input type="text" [(ngModel)]="newClient.email" name="email"  class="form-control" placeholder="email">
+             
 
-
-                <button class="btn btn-success btn-lg btn-block" (click)="addClient()">Update Client</button>
+  <label for="uname">Telephone: </label>
+                        <input type="text" [(ngModel)]="newClient.telephone" name="telephone"  class="form-control" placeholder="telephone" required minlength="2" maxlength="12">
+                        <span class="validity"></span>
+            <div>
+                <button class="btn btn-success btn-lg btn-block" (click)="addClient()">Creer Un Client</button>
+                <span class="validity"></span>
+            </div>    
             </div>
         </form>
     </div>

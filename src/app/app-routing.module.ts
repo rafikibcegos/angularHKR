@@ -6,6 +6,7 @@ import { ListclientsComponent } from './listclients/listclients.component';
 
 import { UpdateclientComponent } from './updateclient/updateclient.component';
 import { ListconseillersComponent } from './listconseillers/listconseillers.component';
+import { CompteIdComponent } from "./compte-id/compte-id.component";
 
 
 
@@ -25,9 +26,11 @@ const routes: Routes = [
  
   {path:"modifierClient/:id", component : UpdateclientComponent},
   {path:"listConseillers", component : ListconseillersComponent},
-  // {path:"listComptes/:id", component : ListcomptesComponent},
   {path:"createclient", component : CreateclientComponent},
-  {path:"listComptes", component : ListcomptesComponent}
+  {path:"listComptes", component : ListcomptesComponent},
+  {path:"compte-id/:id", component : CompteIdComponent}
+  
+
 
 
 ];

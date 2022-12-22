@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
 import { Client } from '../models/client';
 import { ServiceClientService } from "../services/service-client.service";
 import { Router } from '@angular/router';
@@ -15,16 +15,25 @@ export class CreateclientComponent implements OnInit {
   @Input()
 newClient= new Client;
 
-  constructor(public serviceClient:ServiceClientService, public router:Router) { }
+
+myForm: FormGroup;
+nom: FormControl;
+  constructor(private fb: FormBuilder, public serviceClient:ServiceClientService, public router:Router) {
+
+    this.myForm = fb.group({
+      'nom' : ['', Validators.required]
+    });
+    this.nom = this.myForm.controls['nom'] as FormControl;
+
+
+  }
+
+
+   
 
   ngOnInit() {
   }
-  // onSubmit(userForm: NgForm) {
-  //   this.newClient = userForm.value
-  //   console.log(this.newClient)
-  //   this.serviceClient.create(this.newClient).subscribe((data: Client) =>{ 
-  //     this.router.navigate(['/listClients'])
-  //   })}
+
 
 
 addClient() {
@@ -36,19 +45,3 @@ addClient() {
 
 
 
-
-
-    // constructor(
-    //     public service: ClientService,
-    //     public router: Router
-    // ) {
-    //     this.clientDetails.adresse = new Adresse();
-    // }
-
-    // ngOnInit() { }
-
-    // addClient() {
-    //     this.service.createClient(this.clientDetails).subscribe((data: {}) => {
-    //         this.router.navigate(['/clients-list']);
-    //     });
-    // }

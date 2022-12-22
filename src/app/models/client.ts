@@ -8,7 +8,7 @@ export class Client {
   // motDePasse: string='';
 adresse: Adresse={numero:'', rue:'', ville:''};
 listeCompte:Compte[];
-email: string=''
+telephone: string=''
 
 
 }

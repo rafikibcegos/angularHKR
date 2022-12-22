@@ -1,9 +1,6 @@
 <div class="input-group ">
-    <!-- <div class="input-group-prepend">
-      <span class="input-group-text" id="basic-addon1">@</span>
-    </div> --> 
    </div>
-   <h3>Liste des conseillers</h3>
+   <h2>Liste Des Conseillers</h2>
    <div class="btn-group btn-group-toggle" data-toggle="buttons">
      
     </div>
@@ -11,26 +8,20 @@
           
           <thead class="bg-info text-center" >
             <tr>
-                <th scope="col">Id</th>
+              
               <th scope="col">Nom</th>
               <th scope="col">Prenom</th>
-              <th scope="col">Email</th>
+              <th scope="col">Telephone</th>
               <th scope="col">Adresse</th>
-              <!-- <th scope="col">Nom d'utilisateur</th> -->
             </tr>
           </thead>
           <tbody>
             <tr *ngFor="let c of listConseillers">
-              <td>{{c.id}}</td>
+              
               <td>{{c.nom}}</td>
               <td>{{c.prenom}}</td>
-              <td>{{c.email}}</td>
+              <td>{{c.telephone}}</td>
               <td>{{c.adresse.numero +' '+ c.adresse.rue + ' ' + c.adresse.ville}}</td>
-              <!-- <td>{{c.login}}</td> -->
-              <!-- <td>
-                <button class="btn btn-danger btn-sm btn-block" (click)="deleteClient(c.id)">Delete</button>
-                <button class="btn btn-warning btn-sm btn-block" [routerLink]="['/modifierConseiller', c.id]">Edit</button>
-              </td> -->
             </tr>
           </tbody>
         </table>

@@ -4,7 +4,7 @@ export class Conseiller {
     id:number;
     nom : string;
     prenom: string;
-    email : string;
+    telephone : string;
     
     // login: string;
     // password: string;

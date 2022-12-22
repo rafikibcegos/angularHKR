@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Adresse } from '../models/adresse';
 import { Client } from '../models/client';
@@ -14,11 +14,17 @@ import { ServiceClientService } from '../services/service-client.service';
 export class UpdateclientComponent implements OnInit {
   id = this.activeRoute.snapshot.params['id'];
   clientDetails: any = {};
+  myForm: FormGroup;
+  nom: FormControl;
 
   constructor(private fb: FormBuilder, private activeRoute: ActivatedRoute, private serviceClient:ServiceClientService, private router: Router) { 
 
     this.clientDetails = new Client();
     this.clientDetails.adresse = new Adresse();
+    this.myForm = fb.group({
+      'nom' : ['', Validators.required]
+    });
+    this.nom = this.myForm.controls['nom'] as FormControl;
 
 
   }

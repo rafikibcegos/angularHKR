@@ -1,0 +1,18 @@
+td {
+    position: sticky;
+    top: 0;
+   
+    text-align: center;
+    color:blueviolet;
+    padding: 16px;
+    font: 500 20px/32px Roboto, "Helvetica Neue", sans-serif;
+  }
+
+ h2 {
+    position: sticky;
+    top: 0;
+   padding: 25px;
+    text-align: center;
+    color:fuchsia;
+  
+  }

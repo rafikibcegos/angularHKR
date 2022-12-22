@@ -1,119 +1,10 @@
-<!-- <div class="input-group ">
-    <div class="input-group-prepend">
-      
-    </div>
-   </div>
-   <h3 style="text-align: center; color:orange;;">Liste des comptes du client N°: {{client.id}} Nom: {{client.nom}} Prenom: {{client.prenom}}</h3><br>
-   <div class="container" >
-   <table class="table table-bordered">
-    <thead class="bg-info text-center">
-      <tr>
-        <th colspan="3" style="font-size: 1.5em;">Compte Courant</th>
-      </tr>
-      <tr>
-        <th scope="col">Numéro de compte</th>
-        <th scope="col">Solde</th>
-        <th scope="col">Decouvert</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td style="text-align: center;">{{compteCourant.numeroCompte}}</td>
-        <td style="text-align: center;">{{compteCourant.solde}}</td>
-        <td style="text-align: center;">{{compteCourant.decouvert}}</td>
-      </tr>
-    </tbody>
-   </table>
-   </div><br>
-   <div class="container"  *ngIf="listecomptes.length == 2">
-    <table class="table table-bordered">
-      <thead class="bg-info text-center">
-      </thead>
-      <tbody>
-        
-      </tbody>
-    </table>
-    </div>
 
-
-
-
-
-
-    <div class="container" >
-      <table class="table table-bordered">
-       <thead class="bg-info text-center">
-         <tr>
-           <th colspan="3" style="font-size: 1.5em;">Compte Epargne</th>
-         </tr>
-         <tr>
-           <th scope="col">Numéro de compte</th>
-           <th scope="col">Solde</th>
-         </tr>
-       </thead>
-       <tbody>
-         <tr>
-           <td style="text-align: center;">{{compteEpargne.numeroCompte}}</td>
-           <td style="text-align: center;">{{compteEpargne.solde}}</td>
-           
-         </tr>
-       </tbody>
-      </table>
-      </div><br>
-      <div class="container"  *ngIf="listecomptes.length == 2">
-       <table class="table table-bordered">
-         
-         
-       </table>
-       </div> -->
-
-
-
-
-
-
-
-
-       <!-- <div class="my-3 mx-auto">
-        <h3>Liste des comptes:</h3>
-      </div>
-      <div class="input-group">
-        
-    
-    <table class="table table-bordered">
-    
-      <thead class="bg-info text-center">
-        <tr>
-          
-          <th scope="col">Id</th>
-          <th scope="col">Numero de Compte</th>
-          <th scope="col">Solde</th>
-          <th scope="col">Date d'Ouverture</th>
-         
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let c of listComptes">
-          <th scope="row">{{c.id}}</th> 
-          <td>{{c.numeroCompte}}</td>
-          <td>{{c.solde}}</td>
-          <td>{{c.dateOuverture}}</td> -->
-          <!-- <td cellspacing="20">{{c.adresse.numero +' ' + c.adresse.rue + ' ' +c.adresse.ville}}</td>
-         
-          <td>
-            <button class="btn btn-danger btn-sm btn-block" (click)="deleteClient(c.id)">Supprimer</button>
-            <button class="btn btn-warning btn-sm btn-block" routerLink = "/modifierClient/{{c.id}}">Modifier</button>
-            <button class="btn btn-warning btn-sm btn-block" routerLink = "listComptes/{{c.id}}">Comptes</button>
-          </td> -->
-        <!-- </tr>
-      </tbody>
-    </table> -->
 
 
 
     <div class="input-group ">
      </div>
-     <h3>Liste des comptes</h3>
+     <h2>Liste des comptes</h2>
      <div class="btn-group btn-group-toggle" data-toggle="buttons">
        
       </div>
@@ -121,7 +12,7 @@
             
             <thead class="bg-info text-center" >
               <tr>
-                  <th scope="col">Id</th>
+                  
                 <th scope="col">numero de Compte</th>
                 <th scope="col">solde</th>
                 <th scope="col">date d'Ouverture</th>
@@ -129,7 +20,7 @@
             </thead>
             <tbody>
               <tr *ngFor="let c of listComptes">
-                <td>{{c.id}}</td>
+                
                 <td>{{c.numeroCompte}}</td>
                 <td>{{c.solde}}</td>
                 <td>{{c.dateOuverture}}</td>
